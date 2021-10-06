@@ -10,13 +10,13 @@ const TodoForm = ({addTodo}) => {
     });
 
     const onChangeHandler = (e) => {
-        setTodo({...todo, task: e.target.value.trim()});
+        setTodo({...todo, task: e.target.value});
     }
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
         
-        if(todo.task.length) {
+        if(todo.task.trim().length) {
             addTodo({...todo, id: uuidv4()});
 
             setTodo({...todo, task: ""});
